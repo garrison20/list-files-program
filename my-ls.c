@@ -84,6 +84,7 @@ int main(int argc, char *argv[]) {
   the second arg is the directory name */
   } else if (argc == 3) {
     search(argv[2], argv[1], curr_dir, file_parsing);
+  /* If there are more than 3 arguments, then simply alert the user */
   } else {
     printf("Too many arguments\n");
     return 1;
