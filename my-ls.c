@@ -1,15 +1,16 @@
 /*
-  This program is a simple copy of the terminal's "ls" function.
-  Simply typing executing the program with no arguments will print
-  all the contents of the folder. Executing the program with a name
-  passed in as a parameter will print "Found file" if the name exists. 
-  and belongs to a file, and will print the contents of a directory if 
-  the name belongs to a directory. If there are two arguments, then the 
-  first is the file to be checked for existence and the second is the 
-  desired directory to check in. This perform the same function as 
-  passing only one argument to the program, but this only works inside 
-  one of the current directory's immediate directories. The function 
-  can't search inside a directory two levels down, only one.
+  This program is a simple copy of the terminal's "ls" function. 
+  Executing the program with no arguments will print all the contents 
+  of the folder. Executing the program with a single name passed in as 
+  a parameter will print "Found file" if the name exists and belongs 
+  to a file, and will print the contents of a directory if the name 
+  belongs to a directory. If there are two arguments, the first 
+  argument is the file/directory to be checked for existence and the 
+  second is the desired directory to check in. Inputting two arguments 
+  performs the same function as passing only one argument to the program, 
+  except inside the specified directory should it exist. As of right now, 
+  this function only works in the next immediate directory; it cannot 
+  perform any checks in a directory two levels lower.
 */
 
 #include <stdio.h>
@@ -43,7 +44,6 @@ void print_contents(char *dir) {
 
 /* This function parses through a directory and prints "File found" if the name being 
 searched is a file and prints the contents of a directory if the name is a directory */
-/*int search(char *dir, char *desired_name, DIR *curr_dir, struct dirent *file_parsing) {*/
 int search(char *dir, char *desired_name) {
   char *path = NULL;
   DIR *curr_dir = NULL, *temp_dir = NULL;
